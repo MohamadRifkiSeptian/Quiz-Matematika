@@ -1,0 +1,97 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans';
+}
+.container{
+  display: flex;
+  justify-content: space-around;
+  height: 100vh;
+  align-items: center;
+}
+.content{
+  display: grid;
+  justify-content: center;
+  height: 300px;
+  margin-top: 50px;
+}
+.content p, h1{
+  width: 700px;  
+  text-align: center;
+  font-weight: 500;
+  font-size: 20px;
+}
+.content h1{
+  font-size: 5em;
+  font-weight: 800;
+}
+.button{
+  margin: auto;
+}
+.button button{
+  width: 140px;
+  height: 40px;
+  font-weight: 500;
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  display: inline-block;
+  transition: .1s;
+}
+.content button:active{
+  background-color: rgb(27, 27, 27);
+  color: rgb(231, 231, 231);
+  transform: scale(.7);
+}
+.content img{
+  display: inline-block;
+  margin: auto;
+  position: absolute;
+  top: 70px;
+  right: 100px;
+  width: 60px;
+  transition: .1s;
+  
+}
+.content img:active{
+  transform: scale(.7);
+}
+.gambar{
+  width: 700px;
+}
+@media screen and (max-width: 600px){
+
+  .container{
+    margin: 100px auto ;
+    height: 400px;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .gambar{
+    width: 300px;
+  }
+  .content img{
+    width: 40px;
+    top: 20px;
+    right: 20px;
+  }
+  .content{
+    display: grid;
+    gap: 5px;
+  }
+  .content p, h1{
+    width: 300px;  
+    text-align: center;
+    font-weight: 500;
+  }
+  .content h1{
+    font-size: 40px;
+    font-weight: 800;
+  }
+  .content p{
+    font-size: 12px;
+  }
+
+}

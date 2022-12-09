@@ -1,0 +1,535 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans';
+  color: white;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+
+}
+
+.container {
+  width: 1000px;
+  margin: auto;
+  height: 100vh;
+  align-content: center;
+  display: grid;
+  gap: 50px;
+  position: relative;
+}
+
+.questions,
+.answers span,
+.answer {
+  display: grid;
+  place-content: center;
+  background-color: black;
+  border-radius: 7px;
+  font-weight: 600;
+}
+
+.navbar {
+  background-color: black;
+  border-radius: 7px;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.questions {
+  height: 300px;
+  width: 100%;
+  font-size: 8em;
+}
+
+.answers {
+  height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.answer-button {
+  width: 100%;
+  justify-content: space-between;
+  display: none;
+}
+
+.answer {
+  height: 150px;
+  width: 220px;
+  font-size: 3em;
+  cursor: pointer;
+  transition: .1s;
+}
+
+.answers span {
+  height: 150px;
+  width: 100%;
+  font-size: 3em;
+  cursor: pointer;
+  transition: .1s;
+  display: grid;
+  place-content: center;
+}
+
+.answers span:active {
+  transform: scale(.8);
+  background-color: rgb(114, 113, 113);
+}
+
+.answer:active {
+  transform: scale(.8);
+}
+
+.navbar img {
+  width: 40px;
+  cursor: pointer;
+  transition: .1s;
+}
+
+.navbar div {
+  width: 300px;
+  height: 60px;
+  background-color: white;
+  border-radius: 7px;
+  color: black;
+  display: grid;
+  place-content: center;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.pop-up {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(140, 139, 139, .5);
+  display: grid;
+  place-content: center;
+  z-index: 999;
+}
+
+.controls {
+  background-color: white;
+  width: 600px;
+  height: 450px;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.active {
+  transform: scale(1);
+}
+
+.closeActive {
+  display: none;
+}
+
+.select {
+  height: 300px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.control {
+  display: grid;
+  place-items: center;
+  width: 200px;
+  height: 40px;
+  font-weight: 500;
+  background-color: black;
+  border-radius: 3px;
+  color: white;
+  transition: .1s;
+  cursor: pointer;
+}
+
+.timer-settings,
+.operasi-hitung {
+  display: grid;
+  gap: 10px;
+}
+
+.close,
+.closes {
+  position: absolute;
+  width: 30px;
+  margin-top: 10px;
+  margin-left: 550px;
+  transition: .1s;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.close:active {
+  transform: scale(.7);
+}
+
+img:active {
+  transform: scale(.7);
+}
+
+.control:active {
+  transform: scale(.8);
+}
+
+.result-popup {
+  background-color: white;
+  width: 600px;
+  height: 400px;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.result-popup span {
+  color: black;
+  font-size: 3em;
+  font-weight: 600;
+}
+
+.result-popup button {
+  margin-top: 15px;
+}
+
+.ganti-warna {
+  background-color: hsl(0, 0%, 80%);
+  border: none;
+  color: black;
+}
+
+.wrong {
+  width: 560px;
+  height: 50px;
+  background-color: #FCB45E;
+  font-size: 1.1em;
+  color: #FF0000;
+  font-weight: 800;
+  text-align: center;
+  line-height: 40px;
+  position: flex;
+  margin: -585px auto;
+  z-index: -1;
+  border-radius: 5px;
+  transition: .3s;
+  opacity: 1;
+  transform: scale(0);
+}
+
+.wrong-selection {
+  color: red;
+  font-size: 1em;
+  height: 30px;
+  line-height: 30px;
+  transition: .1s;
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* .bottom-start{
+  position: fixed;
+  margin-top: 385px;
+} */
+.headingPopup {
+  height: 50px;
+  color: black;
+  border: 3px solid black;
+  display: grid;
+  place-content: center;
+  border-radius: 3px;
+  font-size: 1em;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0);
+  text-align: center;
+
+}
+
+/* popup custom waktu */
+.popup-custom-timer {
+  position: absolute;
+  background-color: white;
+  width: 600px;
+  height: 450px;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  border-radius: 20px;
+  gap: 20px;
+  transform: scale(0);
+}
+
+.popup-custom-timer section,
+input {
+  color: black;
+}
+
+.timeClick {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.custom-timer {
+  width: 450px;
+  border: 3.4px solid black;
+  padding: 20px;
+  border-radius: 10px;
+  display: grid;
+  justify-content: center;
+}
+
+.isi-custom {
+  width: 350px;
+  display: grid;
+  gap: 10px;
+}
+
+.isi-custom input {
+  height: 60px;
+  width: 350px;
+  border-radius: 6px;
+  padding: 10px;
+  border: 3.4px solid black;
+}
+
+.popup-custom-timer section {
+  font-weight: 800;
+  font-size: 1.1em;
+}
+
+.timeClick {
+  display: grid;
+  justify-items: center;
+}
+
+.timeClick .control {
+  width: 140px;
+}
+
+.closeAwal {
+  transform: scale(0);
+}
+
+.active {
+  transform: scale(1);
+}
+
+.fixedTimer {
+  position: relative;
+  top: 10px;
+}
+
+.wrong-input {
+  position: absolute;
+  bottom: 135px;
+  color: red;
+  transform: scale(0);
+  transition: .1s;
+}
+.controls .popup-custom-timer img.closeTimer{
+  z-index: 999;
+}
+.closeAwal{
+  z-index: -1;
+}
+@media screen and (max-width: 600px) {
+  .container {
+    width: 300px;
+    height: 550px;
+    align-content: space-between;
+    gap: 0;
+    margin-top: 50px;
+  }
+
+  .answers {
+    height: 300px;
+  }
+  .controls,
+  .result-popup,
+  .popup-custom-timer {
+    width: 300px;
+    height: 400px;
+  }
+  .navbar {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .navbar,
+  .questions,
+  .answers,
+  .answer {
+    width: 300px;
+  }
+
+  .navbar,
+  .answer {
+    height: 60px;
+  }
+
+  .navbar div {
+    width: 80px;
+    height: 30px;
+    font-size: 14px;
+    border-radius: 3px;
+  }
+
+  .navbar img.gear {
+    width: 30px;
+    height: 30px;
+  }
+
+  .navbar img.restart {
+    width: 28px;
+  }
+
+  .navbar img.calculator {
+    width: 21px;
+    height: 30px;
+  }
+
+  /* popup awal */
+  
+  .control {
+    width: 80px;
+    height: 40px;
+    border: none;
+    font-size: 12px;
+  }
+
+  .select {
+    display: inline-block;
+  }
+
+  .operasi-hitung,
+  .timer-settings {
+    display: flex;
+    flex-wrap: wrap;
+    width: 260px;
+  }
+  .bottom-start{
+    position: absolute;
+    margin-top: 340px;
+  }
+  .headingPopup {
+    height: 35px;
+    width: 100%;
+    justify-content: start;
+    font-size: 20px;
+    font-weight: 700;
+    border: none;
+  }
+
+  .close,
+  .closes {
+    position: absolute;
+    width: 30px;
+    margin-top: 20px;
+    margin-left: 230px;
+  }
+
+  .wrong-selection {
+    font-size: 12px;
+    position: absolute;
+    margin-top: 315px;
+  }
+
+  .questions {
+    font-size: 55px;
+    height: 140px;
+  }
+
+  .answer-button {
+    flex-wrap: wrap;
+    align-content: space-between;
+  }
+
+  .answer {
+    font-size: 20px;
+  }
+
+  .wrong {
+    width: 200px;
+    margin: -363px auto;
+    font-size: 14px;
+    height: 30px;
+    line-height: normal;
+    display: grid;
+    align-items: center;
+    z-index: 1;
+    border-end-start-radius: 0;
+    border-end-end-radius: 0;
+  }
+
+  .answers span {
+    height: 60px;
+    font-size: 25px;
+  }
+
+  /* popup custom waktu */
+
+  .custom-timer {
+    width: 250px;
+    height: 150px;
+    border: 3px solid black;
+    padding: 8px;
+  }
+
+  .isi-custom {
+    width: 200px;
+  }
+
+  .isi-custom input {
+    height: 40px;
+    width: 200px;
+    border: 3px solid black;
+  }
+
+  .popup-custom-timer section {
+    font-weight: 800;
+    font-size: 16px;
+  }
+
+  .timeClick {
+    display: flex;
+  }
+
+  .timeClick .control {
+    width: 80px;
+  }
+
+  .wrong-input {
+    font-size: 12px;
+  }
+
+  /* popup result */
+  .result-popup {
+    line-height: 35px;
+  }
+
+  .result-popup span {
+    color: black;
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  .result-popup button {
+    margin-top: 15px;
+  }
+}

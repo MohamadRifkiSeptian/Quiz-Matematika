@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mari Menghitung</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="CalculatorStyle.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300&family=DM+Sans&family=Open+Sans:wght@300&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <div class="timer">Waktu</div>
+        <div class="skor">Sekor : 0</div>
+        <img
+          src="../img/calculator.png"
+          alt="calculator"
+          height="45px"
+          class="calculator"
+        />
+        <img src="../img/restart.png" alt="restart" class="restart" />
+        <img src="../img/gear.png" alt="control" height="40px" class="gear" />
+      </div>
+      <div class="questions">Mulai</div>
+      <div class="answers">
+        <span class="start">Go</span>
+        <div class="answer-button">
+          <div class="answer" data-answer="A"></div>
+          <div class="answer" data-answer="B"></div>
+          <div class="answer" data-answer="C"></div>
+          <div class="answer" data-answer="D"></div>
+        </div>
+      </div>
+      <div class="wrong">Upss, Jawaban mu salah!!!</div>
+    </div>
+    <div class="pop-up">
+      <div class="results"></div>
+      <div class="controls">
+        <div class="select">
+          <div class="operasi-hitung">
+            <div class="headingPopup">Operasi Matematika</div>
+            <button class="control bottom-control" data-math-operasi="*">
+              Kali ( * )
+            </button>
+            <button class="control bottom-control" data-math-operasi="/">
+              Bagi ( / )
+            </button>
+            <button class="control bottom-control" data-math-operasi="+">
+              Tambah ( + )
+            </button>
+            <button class="control bottom-control" data-math-operasi="-">
+              Kurang ( - )
+            </button>
+            <button class="control bottom-control" data-math-operasi="random">
+              Random
+            </button>
+          </div>
+          <div class="timer-settings">
+            <div class="headingPopup">Waktu</div>
+            <button class="control bottom-control" data-timer-set="30">
+              30 detik
+            </button>
+            <button class="control bottom-control" data-timer-set="60">
+              1 menit
+            </button>
+            <button class="control bottom-control" data-timer-set="120">
+              2 menit
+            </button>
+            <button class="control bottom-control" data-timer-set="180">
+              3 menit
+            </button>
+            <button
+              class="control bottom-control addTimerHtml"
+              data-timer-set="custom">
+              Custom
+            </button>
+          </div>
+        </div>
+        <span class="wrong-selection"></span>
+        <button class="control bottom-start" data-start="start">OK</button>
+        <img src="../img/close.png" alt="close" class="close closeAwal" />
+
+        <div class="popup-custom-timer">
+          <img src="../img/close.png" alt="close" class="close closeTimer" />
+          <span class="wrong-input"></span>
+          <div class="custom-timer">
+            <div class="isi-custom">
+              <section>Mau berapa waktunya?</section>
+              <input type="number" id="timerInput" />
+              <div class="timeClick">
+                <div class="control" data-costomWaktu="detik">detik</div>
+                <div class="control" data-costomWaktu="menit">menit</div>
+              </div>
+            </div>
+          </div>
+          <div class="control fixedTimer">OK</div>
+        </div>
+      </div>
+    </div>
+    <div class="container-calculator">
+      <div class="show-num">
+        <img src="../img/close.png" alt="close" class="calClose close" />
+        <header></header>
+        <div class="num-atas"></div>
+        <input type="text" class="input-num" value="0" disabled />
+      </div>
+      <div class="button">
+        <div class="cell fitur" data-num="AC">AC</div>
+        <div class="cell fitur" data-num="C">
+          <img src="hapus.png" alt="hapus" width="25px" />
+        </div>
+        <div class="cell fitur" data-num="%">%</div>
+        <div class="cell ops" data-num="/">/</div>
+        <div class="cell" data-num="7">7</div>
+        <div class="cell" data-num="8">8</div>
+        <div class="cell" data-num="9">9</div>
+        <div class="cell ops" data-num="-">-</div>
+        <div class="cell" data-num="4">4</div>
+        <div class="cell" data-num="5">5</div>
+        <div class="cell" data-num="6">6</div>
+        <div class="cell ops" data-num="*">*</div>
+        <div class="cell" data-num="1">1</div>
+        <div class="cell" data-num="2">2</div>
+        <div class="cell" data-num="3">3</div>
+        <div class="cell ops" data-num="+">+</div>
+        <div class="cell" data-num=".">.</div>
+        <div class="cell" data-num="0">0</div>
+        <div class="cell" data-num="00">00</div>
+        <div class="cell result" data-num="=">=</div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="scriptCalculator.js"></script>
+  </body>
+</html>
