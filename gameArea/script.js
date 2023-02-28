@@ -327,6 +327,7 @@ document.addEventListener("click", (buttonClose) => {
     );
     popupResultss.classList.toggle("closeActive");
     score.textContent = `Sekor : 0`;
+    skor = 1;
   } else if (buttonClose.target.classList[0] == "close") {
     buttonClose.target.parentElement.classList.toggle("active");
     console.log(timerInput.value.length);
